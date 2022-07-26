@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button, a, li {
+    cursor: pointer;
+}
+
+.todo {
+    margin-bottom: 1rem;
+    &.completed {
+        span {
+            text-decoration: line-through;
+        }
+    }
+
+    label {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 1rem;
+        background: #f3f3f3;
+    }
+
+    i {
+        z-index: 2;
+    }
+}
+
+.todo-enter {
+    opacity: 0;
+}
+.todo-enter-active {
+    opacity: 1;
+    transition: opacity 500ms cubic-bezier(0.37, -0.18, 0.53, 1.53);
+}
+.todo-exit {
+    opacity: 1;
+}
+.todo-exit-active {
+    opacity: 0;
+    transition: opacity 500ms cubic-bezier(0.37, -0.18, 0.53, 1.53);
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}

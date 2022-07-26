@@ -1,0 +1,49 @@
+.todoItem {
+    .todoItemContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 2rem;
+        height: 100%;
+        color: #000;
+        .fakeCheckbox {
+            margin-right: 20px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            position: relative;
+            .checkbox {
+                display: none;
+            }
+        }
+    }
+    &.completed {
+        .fakeCheckbox {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 15px;
+                height: 23px;
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-right: 2px solid #26a69a;
+                border-bottom: 2px solid #26a69a;
+                -webkit-transform: rotate(40deg);
+                transform: rotate(40deg) translate(-50%, -50%);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-transform-origin: 100% 100%;
+                transform-origin: 100% 100%;
+            }
+        }
+        span {
+            text-decoration: line-through;
+            color: #ccc
+        }
+    }
+}
